@@ -2,9 +2,9 @@ var canvas = document.getElementById("canvas");
 var context = canvas.getContext('2d');
 var board= [
   [false,false,false,false,false],
-  [false,false,false,false,false],
   [false,false,false,true,false],
-  [false,false,false,false,false],
+  [false,false,false,true,false],
+  [false,false,false,true,false],
   [false,false,false,false,false]
 ]
 function drawLines() {
