@@ -3,7 +3,7 @@ var context = canvas.getContext('2d');
 var board= [
   [false,false,false,false,false],
   [false,false,false,false,false],
-  [false,false,false,true,false],
+  [false,false,false,false,false],
   [false,false,false,false,false],
   [false,false,false,false,false]
 ]
@@ -40,6 +40,18 @@ function onMouseClick(e){
   var c=Math.floor(e.clientX /100);
   var r=Math.floor(e.clientY /100);
   board [r][c] = ! board [r][c];
+  if (r-1 >= 0){
+    board [r-1][c] = ! board [r-1][c];
+  }
+  if (r+1 <= 4){
+    board [r+1][c] = ! board [r+1][c];
+  }
+  if (c-1 >= 0){
+  board [r][c-1] = ! board [r][c-1];
+  }
+  if (c+1 <= 4){
+  board [r][c+1] = ! board [r][c+1];
+  }
   drawGStuff();
 }
 canvas.onclick = onMouseClick;
