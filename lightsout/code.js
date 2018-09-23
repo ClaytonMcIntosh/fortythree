@@ -36,9 +36,8 @@ function drawGStuff(){
   drawLines();
 }
 drawGStuff();
-function onMouseClick(e){
-  var c=Math.floor(e.clientX /100);
-  var r=Math.floor(e.clientY /100);
+
+function onClick(r,c){
   board [r][c] = ! board [r][c];
   if (r-1 >= 0){
     board [r-1][c] = ! board [r-1][c];
@@ -52,6 +51,20 @@ function onMouseClick(e){
   if (c+1 <= 4){
   board [r][c+1] = ! board [r][c+1];
   }
+}
+
+function onMouseClick(e){
+  var c=Math.floor(e.clientX /100);
+  var r=Math.floor(e.clientY /100);
+  onClick(r,c);
   drawGStuff();
 }
 canvas.onclick = onMouseClick;
+function randomBoard(){
+  for (var i=0; i<7; i=i+1){
+    var r= Math.floor (Math.random() *5);
+    var c= Math.floor (Math.random() *5);
+    onClick(r,c);
+  }
+  drawGStuff();
+}
