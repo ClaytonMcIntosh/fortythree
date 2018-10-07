@@ -6,7 +6,22 @@ var board= [
   [false,false,false,false,false],
   [false,false,false,false,false],
   [false,false,false,false,false]
-]
+];
+var easybutton = document.getElementById("easy");
+var mediumbutton = document.getElementById("medium");
+var hardbutton = document.getElementById("hard");
+
+function easy(){
+  randomBoard(3);
+}
+easybutton.onclick=easy;
+
+mediumbutton.onclick=function (){
+randomBoard(5);
+};
+
+hardbutton.onclick= () => randomBoard(12);
+
 function drawLines() {
   for (var i=100; i<= 400; i=i+100){
     context.beginPath();
@@ -59,9 +74,16 @@ function onMouseClick(e){
   onClick(r,c);
   drawGStuff();
 }
+
 canvas.onclick = onMouseClick;
-function randomBoard(){
-  for (var i=0; i<7; i=i+1){
+
+function randomBoard(level){
+  for (var r=0; r<5; r=r+1){
+    for (var c=0; c<5; c=c+1){
+      board [r][c] = false;
+    }
+    }
+  for (var i=0; i<level; i=i+1){
     var r= Math.floor (Math.random() *5);
     var c= Math.floor (Math.random() *5);
     onClick(r,c);
