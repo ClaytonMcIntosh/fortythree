@@ -69,8 +69,11 @@ function onClick(r,c){
 }
 
 function onMouseClick(e){
-  var c=Math.floor(e.clientX /100);
-  var r=Math.floor(e.clientY /100);
+  var rect = canvas.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  var y = e.clientY - rect.top;
+  var c=Math.floor(x /100);
+  var r=Math.floor(y /100);
   onClick(r,c);
   drawGStuff();
 }
