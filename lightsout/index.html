@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="style.css" rel="stylesheet"> 
-    <title>Lights Out!</title>
-  </head>
-  <body>
+
+<head>
+  <link href="style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <title>Lights Out!</title>
+</head>
+
+<body>
+  <div id="title">
+    <h1>LIGHTS OUT!</h1>
+    <label><input id="easy-radio" type="radio" name="level" value="easy"> Easy</label>
+    <label><input id="medium-radio" type="radio" name="level" value="medium"> Medium</label>
+    <label><input id="hard-radio" type="radio" name="level" value="hard"> Hard</label>
+    <input id="go" type="button" value="Go!!">
+  </div>
+  <div id="maingame">
     <canvas style="background-color: white" id="canvas" width="500" height="500"></canvas>
-   <div>
-    <input id="easy" type="button" value="EASY">
-    <input id="medium" type="button" value="MEDIUM">
-    <input id="hard" type="button" value="HARD">
-   </div>
-    <script src="code.js"></script>
-  </body>
+    <div>
+      <input id="easy" type="button" value="EASY">
+      <input id="medium" type="button" value="MEDIUM">
+      <input id="hard" type="button" value="HARD">
+    </div>
+  </div>
+  <script src="code.js"></script>
+</body>
+
 </html>

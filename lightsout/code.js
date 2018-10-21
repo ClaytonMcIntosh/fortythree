@@ -10,6 +10,7 @@ var board= [
 var easybutton = document.getElementById("easy");
 var mediumbutton = document.getElementById("medium");
 var hardbutton = document.getElementById("hard");
+var gobutton = document.getElementById("go");
 
 function easy(){
   randomBoard(3);
@@ -21,6 +22,12 @@ randomBoard(5);
 };
 
 hardbutton.onclick= () => randomBoard(12);
+
+gobutton.onclick = function (){
+  console.log("make a go thing work now");
+  $("#title").slideUp (4000);
+  $("#maingame").slideDown (4000);
+}
 
 function drawLines() {
   for (var i=100; i<= 400; i=i+100){

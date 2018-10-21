@@ -1,6 +1,6 @@
 canvas {
     display: inline;
-    margin-top: 50px;
+    margin-top: 25px;
     
 }
 
@@ -9,3 +9,18 @@ body {
     background-color: #39abb4;
 }
 
+label {
+    display: block;
+}
+
+#go {
+    margin-top: 25px;
+}
+
+#maingame {
+    display: none; /* This is making it invisible */
+}
+
+#title {
+    /* position: absolute; */
+}
