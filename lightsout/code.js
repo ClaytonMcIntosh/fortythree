@@ -2,10 +2,10 @@ var canvas = document.getElementById("canvas");
 var context = canvas.getContext('2d');
 var board= [
   [false,false,false,false,false],
+  [false,true,false,true,false],
   [false,false,false,false,false],
-  [false,false,false,false,false],
-  [false,false,false,false,false],
-  [false,false,false,false,false]
+  [true,false,false,false,true],
+  [false,true,true,true,false]
 ];
 var easybutton = document.getElementById("easy");
 var mediumbutton = document.getElementById("medium");
