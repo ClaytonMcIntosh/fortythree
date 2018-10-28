@@ -24,3 +24,10 @@ label {
 #title {
     /* position: absolute; */
 }
+
+.color-swatch {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    display: inline-block;
+}

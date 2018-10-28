@@ -27,7 +27,22 @@ gobutton.onclick = function (){
   console.log("make a go thing work now");
   $("#title").slideUp (4000);
   $("#maingame").slideDown (4000);
-}
+};
+
+document.getElementById("easy-radio").onclick = function (){
+easy();
+gobutton.disabled = false;
+};
+
+document.getElementById("medium-radio").onclick = function (){
+  randomBoard(5); // Note: This is calling the random board and choosing the parameters here. But be warned... it means you gotta change both parameters if you want medium to be consistant (unlike easy)
+  gobutton.disabled = false;
+  };
+
+  document.getElementById("hard-radio").onclick = function (){
+    randomBoard(12); // Note: see  medium-radio above
+    gobutton.disabled = false;
+    };
 
 function drawLines() {
   for (var i=100; i<= 400; i=i+100){
