@@ -12,6 +12,12 @@ var mediumbutton = document.getElementById("medium");
 var hardbutton = document.getElementById("hard");
 var gobutton = document.getElementById("go");
 
+//function backColorClassic(){
+//var colorofgame = "1"
+//}
+//easybutton.onclick=easy;
+
+
 function easy(){
   randomBoard(3);
 }
@@ -44,6 +50,18 @@ document.getElementById("medium-radio").onclick = function (){
     gobutton.disabled = false;
     };
 
+//document.getElementById("color-classic").onclick = function (){
+//      backColorClassic();
+//      gobutton.disabled = false;
+//      };
+
+document.getElementById("color-yellowblack").onclick = function (){
+      easy();
+      gobutton.disabled = false;
+      };
+
+
+
 function drawLines() {
   for (var i=100; i<= 400; i=i+100){
     context.beginPath();
@@ -68,6 +86,12 @@ function drawGStuff(){
         context.fillStyle = 'black';
       }
       context.fillRect(c*100,r*100,100,100)
+//      if (colorofgame =1){
+//        context.fillStyle = 'red';
+//      } else {
+//        context.fillStyle = 'blue';
+//      } 
+//      }
     }
     }
   drawLines();

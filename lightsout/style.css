@@ -30,4 +30,5 @@ label {
     height: 20px;
     border: 1px solid black;
     display: inline-block;
-}
+    text-align: center;
+  }
