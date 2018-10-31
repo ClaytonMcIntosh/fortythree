@@ -13,7 +13,7 @@ var hardbutton = document.getElementById("hard");
 var gobutton = document.getElementById("go");
 
 //function backColorClassic(){
-//var colorofgame = "1"
+//var colorofgame = 1;
 //}
 //easybutton.onclick=easy;
 
