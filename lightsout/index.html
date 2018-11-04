@@ -10,22 +10,26 @@
 <body>
   <div id="title">
     <h1>LIGHTS OUT!</h1>
-    <label><input id="easy-radio" type="radio" name="level" value="easy"> Easy</label>
-    <label><input id="medium-radio" type="radio" name="level" value="medium"> Medium</label>
-    <label><input id="hard-radio" type="radio" name="level" value="hard"> Hard</label>
-    <p></p>
-    <label>
-      <input id="color-classic" type="radio" name="color" value="0"> 
-      <div class="color-swatch" style="background-color: #2511d3" >.</div> 
-      <div class="color-swatch" style="background-color: #990d0d" >.</div>   
-    </label>
-    <p></p>
-    <label>
-      <input id="color-yellowblack" type="radio" name="color" value="0"> 
-      <div class="color-swatch" style="background-color: yellow" >.</div> 
-      <div class="color-swatch" style="background-color: black" >.</div>   
-    </label>
-    <input id="go" type="button" value="Go!!" disabled>
+    <div id="notCenteredAlignment">
+      <label><input id="easy-radio" type="radio" name="level" value="easy"> Easy</label>
+      <label><input id="medium-radio" type="radio" name="level" value="medium"> Medium</label>
+      <label><input id="hard-radio" type="radio" name="level" value="hard"> Hard</label>
+      <div id="littleGap"> 
+        <label>
+          <input id="color-classic" type="radio" name="color" value="0"> 
+          <div class="color-swatch" style="background-color: #2511d3" ></div> 
+          <div class="color-swatch" style="background-color: #990d0d" ></div>   
+        </label>
+        <label>
+          <input id="color-yellowblack" type="radio" name="color" value="0"> 
+          <div class="color-swatch" style="background-color: yellow" ></div> 
+          <div class="color-swatch" style="background-color: black" ></div>   
+        </label>
+      </div>
+    </div>
+    <div>
+      <input id="go" type="button" value="Go!!" disabled>
+    </div>
   </div>
   <div id="maingame">
     <canvas style="background-color: white" id="canvas" width="500" height="500"></canvas>
