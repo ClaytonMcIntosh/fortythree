@@ -13,49 +13,67 @@ var hardbutton = document.getElementById("hard");
 var gobutton = document.getElementById("go");
 var lighton = null;
 var lightoff = null;
+var isLevelSet = false;
 
 function easy() {
   randomBoard(3);
+  drawGStuff();
 }
 easybutton.onclick = easy;
 
 mediumbutton.onclick = function () {
   randomBoard(5);
+  drawGStuff();
 };
 
-hardbutton.onclick = () => randomBoard(12);
+hardbutton.onclick = () => {
+  randomBoard(12)
+  drawGStuff
+} ;
 
 gobutton.onclick = function () {
   console.log("make a go thing work now");
-  $("#title").slideUp(4000);
-  $("#maingame").slideDown(4000);
+  $("#title").slideUp(1000);
+  $("#maingame").slideDown(1000);
 };
 
 document.getElementById("easy-radio").onclick = function () {
   easy();
-  gobutton.disabled = false;
+  isLevelSet = true;
+  checkAll();
+
 };
 
 document.getElementById("medium-radio").onclick = function () {
   randomBoard(5); // Note: This is calling the random board and choosing the parameters here. But be warned... it means you gotta change both parameters if you want medium to be consistant (unlike easy)
-  gobutton.disabled = false;
+  isLevelSet = true;
+  checkAll();
 };
 
 document.getElementById("hard-radio").onclick = function () {
   randomBoard(12); // Note: see  medium-radio above
-  gobutton.disabled = false;
+  isLevelSet = true;
+  checkAll();
 };
 
-
+function checkAll(){
+  if (lighton != null && isLevelSet)  {
+    gobutton.disabled = false;
+    drawGStuff();
+  }
+  
+}
 
 document.getElementById("color-classic").onclick = function () {
   lighton = "red";
   lightoff = "blue";
+  checkAll();
 };
 
 document.getElementById("color-yellowblack").onclick = function () {
   lighton = "yellow";
   lightoff = "blue";
+  checkAll();
 };
 
 function drawLines() {
@@ -86,7 +104,6 @@ function drawGStuff() {
   }
   drawLines();
 }
-drawGStuff();
 
 function onClick(r, c) {
   board[r][c] = !board[r][c];
@@ -127,5 +144,5 @@ function randomBoard(level) {
     var c = Math.floor(Math.random() * 5);
     onClick(r, c);
   }
-  drawGStuff();
+
 }
