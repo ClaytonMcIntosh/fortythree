@@ -27,8 +27,8 @@ mediumbutton.onclick = function () {
 };
 
 hardbutton.onclick = () => {
-  randomBoard(12)
-  drawGStuff
+  randomBoard(11)
+  drawGStuff();
 };
 
 gobutton.onclick = function () {
@@ -36,8 +36,10 @@ gobutton.onclick = function () {
     easy();
   } else if (document.getElementById('medium-radio').checked) {
       randomBoard(5);
+      drawGStuff();
   } else {
-    randomBoard(12);
+    randomBoard(11);
+    drawGStuff();
   }
   $("#title").slideUp(1000);
   $("#maingame").slideDown(1000);
@@ -111,7 +113,7 @@ gobutton.onclick = function () {
     drawLines();
   }
 
-  function onClick(r, c) {
+  function onClick(r, c, isHuman=true) {
     board[r][c] = !board[r][c];
     if (r - 1 >= 0) {
       board[r - 1][c] = !board[r - 1][c];
@@ -125,8 +127,7 @@ gobutton.onclick = function () {
     if (c + 1 <= 4) {
       board[r][c + 1] = !board[r][c + 1];
     }
-
-    if (boardIsBoardFalsedOut()) {
+    if (boardIsBoardFalsedOut () && isHuman) {
       flashing(6);
     }
   }
@@ -188,6 +189,7 @@ gobutton.onclick = function () {
   canvas.onclick = onMouseClick;
 
   function randomBoard(level) {
+    do {
     for (var r = 0; r < 5; r = r + 1) {
       for (var c = 0; c < 5; c = c + 1) {
         board[r][c] = false;
@@ -196,7 +198,8 @@ gobutton.onclick = function () {
     for (var i = 0; i < level; i = i + 1) {
       var r = Math.floor(Math.random() * 5);
       var c = Math.floor(Math.random() * 5);
-      onClick(r, c);
+      onClick(r, c, false);
     }
+  } while (boardIsBoardFalsedOut());
 
   }
